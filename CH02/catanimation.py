@@ -16,6 +16,8 @@ catx = 10
 caty = 10
 direction = 'right'
 
+FPS_DIR = 1
+
 while True: # the main game loop
     DISPLAYSURF.fill(WHITE)
 
@@ -45,4 +47,8 @@ while True: # the main game loop
 
     pygame.display.update()
     fpsClock.tick(FPS)
-    # FPS += 1
+    FPS += 1 * FPS_DIR
+    if FPS > 3000:
+        FPS_DIR = -1
+    elif FPS < 10:
+        FPS_DIR = 1
